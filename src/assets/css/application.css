@@ -1,0 +1,51 @@
+body {
+  background-color: #7cc8e5;
+}
+
+header {
+  text-align: center;
+  font-size: 30px;
+  margin-top: -8px;
+}
+
+.container {
+  background-color: black;
+  height: 70vh;
+  width: 60%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-30vh; /* this is half the height of your div*/
+  margin-left:-30%; /*this is half of width of your div*/
+}
+
+.containerheader {
+   color: white;
+   text-align: center;
+   margin-top: 32px;
+}
+
+.questions {
+ position: absolute;
+ top: 50%;
+ left: 20px;
+ right: 20px;
+ color: white;
+ padding: 20px;
+ transform: translateY(-43%);
+ resize: vertical;
+ overflow: auto;
+}
+
+.question {
+  height: 11vh;
+  width: 90%;
+  background-color: #9b9b9b;
+  margin: 15px auto;
+}
+
+.question p {
+  font-size: 22px;
+  vertical-align: middle;
+  text-align: center;
+}
