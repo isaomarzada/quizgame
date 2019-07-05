@@ -1,56 +1,39 @@
-const question = document.getElementsByClassName('question-text');
-const choices = Array.from(document.getElementsByClassName('answer'));
 
 module.exports = {
-  let currentQuestion = {};
-  let acceptingAnswers = true;
-  let score = 0;
-  let questionCounter = 0;
-  let availableQuestions = [];
-
-  let questions = [
-    {
-      question: "Who is the greatest football player of all time?",
-      choice1: "Tom Brady",
-      choice2: "Adrian Peterson",
-      choice3: "Ray Lewis",
-      choice4: "Peyton Manning",
-      answer: 1
-    },
-    {
-      question: "Who is the last runningback to rush for 2000 yards?",
-      choice1: "Adrian Peterson",
-      choice2: "Barry Sanders",
-      choice3: "Emmitt Smith",
-      choice4: "Joe Montana",
-      answer: 2
-    },
-    {
+  const thingies = (function () {
+  const questions = {
+    question1: {
       question: "How many super bowl wins does the Minnesota Vikings have?",
-      choice1: "1",
-      choice2: "3",
-      choice3: "0",
-      choice4: "5",
-      answer: 4
+      answer: 'big fat zero because they stink',
+      1: "1",
+      2: "3",
+      3: "big fat zero because they stink",
+      4: "5"
+    },
+    question2: {
+      question: "How many times has Aaron Rodgers been relaxed?",
+      answer: 'psh, like always',
+      1: "3",
+      2: "psh like always",
+      3: "0",
+      4: "5"
     }
-  ];
-
-  const CORRECT_BONUS = 10;
-  const MAX_QUESTIONS = 3;
-
-  startGame = () => {
-    questionCounter = 0;
-    score = 0;
-    availableQuestions = [... questions];
-    console.log(availableQuestions);
-    getNewQuestion();
-  }
-
-  getNewQuestion = () => {
-    questionCounter++;
-    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-    currentQuestion = availableQuestions[questionIndex];
-    question.innerText = currentQuestion.question;
   };
-  console.log(getNewQuestion());
+
+  function getResult(currentQuestion, selection) {
+    const query = questions[currentQuestion];
+    const { question, answer, ...rest } = query;
+    const options = Object.values(rest);
+
+    if (options.includes(selection)) {
+      const isCorrect = answer === selection ? true : false;
+      return { isCorrect, question, currentQuestion, selection };
+    } else {
+      return { currentQuestion, selection, error: 'somethig went wrong' }
+    }
+  };
+
+  return { getResult };
+
+})();
 }
