@@ -1,24 +1,18 @@
-const app = require("./app");
 const http = require("http");
-const port = normalizePort(process.env.PORT || "3000");
 const fs = require('fs');
-app.set("port", port);
 
-const server = http.createServer(app);
+function onRequest (request, response) {
+  response.writeHead(200, {'Content-Type': 'text/html'});
+  fs.readFile('./index.html', null, function(error, data) {
+    if (error) {
+      response.writeHead(404);
+      response.write('file not found')
+    }
+    else {
+      response.write(data);
+    }
+    response.end();
+  });;
+}
 
-server.listen(port);
-
- function normalizePort(val) {
-   const port = parseInt(val, 10);
-   if (isNaN(port)) {
-     return val;
-   }
-   if (port >= 0) {
-     return port;
-   }
-   return false;
- }
-
-server.on("listening", () => {
-  console.log(`server is listening for requests on port ${server.address().port}`);
-});
+http.createServer(onRequest).listen(3000);
