@@ -4,30 +4,34 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>QuizGame</title>
-    <link rel="stylesheet" href="./src/application.css">
+    <link rel="stylesheet" href="/css/application.css">
   </head>
   <body>
     <header>
         <h1>QuizGame</h1>
     </header>
-    <section class='container'>
+    <section class='start-screen'>
+      <button id='btn' onclick="beforeGame()">Start Game</button>
+    </section>
+    <section class='container' style='display: none'>
       <div class="containerheader">
-         <h2 class="question-text">What is the answer to this question</h2>
+         <h2 id="question-text">What is the answer to this question</h2>
       </div>
        <div class='questions'>
           <div class='question'>
-          <p class="answer" date-number='1'>answer choice</p>
+          <p class="answer" data-number='1'>choice 1</p>
           </div>
           <div class='question'>
-          <p class="answer" date-number='2'>answer choice</p>
+          <p class="answer" data-number='2'>choice 2</p>
           </div>
           <div class='question'>
-          <p class="answer" date-number='3'>answer choice</p>
+          <p class="answer" data-number='3'>choice 3</p>
           </div>
           <div class='question'>
-          <p class="answer" date-number='4'>answer choice</p>
+          <p class="answer" data-number='4'>choice 4</p>
           </div>
        </div>
     </section>
+    <script type="text/javascript" src='/assets/quizgame.js'></script>
   </body>
 </html>

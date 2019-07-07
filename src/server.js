@@ -1,18 +1,11 @@
-const http = require("http");
-const fs = require('fs');
+const express = require('express')
+const app     = express()
+const path    = require('path')
+const port    = 3000
 
-function onRequest (request, response) {
-  response.writeHead(200, {'Content-Type': 'text/html'});
-  fs.readFile('./src/index.html', null, function(error, data) {
-    if (error) {
-      response.writeHead(404);
-      response.write('file not found')
-    }
-    else {
-      response.write(data);
-    }
-    response.end();
-  });;
-}
 
-http.createServer(onRequest).listen(3000);
+app.use('/css', express.static(__dirname +'/css'));
+app.use(express.static('src'));
+app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')))
+
+app.listen(port, () => console.log(`App listening on port ${port}!`))

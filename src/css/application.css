@@ -19,6 +19,39 @@ header {
   margin-left:-30%; /*this is half of width of your div*/
 }
 
+.start-screen {
+  background-color: black;
+  height: 70vh;
+  width: 60%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-30vh; /* this is half the height of your div*/
+  margin-left:-30%; /*this is half of width of your div*/
+}
+
+#btn {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+border-radius: 12px;
+border: none;
+background-color: #3498db;
+color: white;
+font-size: 2rem;
+height: 17%;
+width: 25%;
+transition: 0.1s;
+}
+
+#btn:hover {
+  background-color: #ea4848;
+  color: white;
+  cursor: pointer;
+}
+
 .containerheader {
    color: white;
    text-align: center;

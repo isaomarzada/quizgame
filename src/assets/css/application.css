@@ -19,6 +19,18 @@ header {
   margin-left:-30%; /*this is half of width of your div*/
 }
 
+.start {
+  background-color: green;
+  height: 70vh;
+  width: 60%;
+  position:absolute;
+  z-index: 900;
+  top:50%;
+  left:50%;
+  margin-top:-30vh; /* this is half the height of your div*/
+  margin-left:-30%; /*this is half of width of your div*/
+}
+
 .containerheader {
    color: white;
    text-align: center;
