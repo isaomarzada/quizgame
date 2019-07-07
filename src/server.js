@@ -8,4 +8,4 @@ app.use('/css', express.static(__dirname +'/css'));
 app.use(express.static('src'));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')))
 
-app.listen(port, () => console.log(`App listening on port ${port}!`))
+app.listen(process.env.PORT || port, () => console.log(`App listening on port ${port}!`));
