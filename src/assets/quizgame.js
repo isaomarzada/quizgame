@@ -1,5 +1,12 @@
 const question = document.getElementById('question-text');
 const choices = Array.from(document.getElementsByClassName('answer'));
+const questionCounterText = document.getElementById('questionCounter');
+const scoreText = document.getElementById('score');
+var x = document.getElementsByClassName('container');
+var y = document.getElementsByClassName('start-screen');
+var timer = document.getElementById('hud');
+var endText = document.getElementById('end-text');
+var end = document.getElementById('end');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -7,56 +14,79 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
-let questions = [
-  {
-    question: "Who is the greatest football player of all time?",
-    choice1: "Tom Brady",
-    choice2: "Adrian Peterson",
-    choice3: "Ray Lewis",
-    choice4: "Peyton Manning",
-    answer: 1
-  },
-  {
-    question: "Who is the last runningback to rush for 2000 yards?",
-    choice1: "Adrian Peterson",
-    choice2: "Barry Sanders",
-    choice3: "Emmitt Smith",
-    choice4: "Joe Montana",
-    answer: 2
-  },
-  {
-    question: "How many super bowl wins does the Minnesota Vikings have?",
-    choice1: "1",
-    choice2: "3",
-    choice3: "0",
-    choice4: "5",
-    answer: 4
-  }
-];
+let questions = [];
+
+fetch('https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple')
+  .then(res => {
+    return res.json();
+  })
+  .then(loadedQuestions => {
+    console.log(loadedQuestions.results);
+    questions = loadedQuestions.results.map( loadedQuestion => {
+      const formattedQuestion = {
+        question: loadedQuestion.question
+      };
+
+      const answerChoices = [...loadedQuestion.incorrect_answers];
+      formattedQuestion.answer = Math.floor(Math.random() * 3) + 1;
+      answerChoices.splice(formattedQuestion.answer - 1, 0,
+      loadedQuestion.correct_answer);
+
+      answerChoices.forEach((choice, index) => {
+        formattedQuestion["choice" + (index + 1)] = choice;
+      });
+
+      return formattedQuestion;
+    })
+    startGame();
+  })
+  .catch(err => {
+    console.log('There has been an error!');
+  });
 
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 10;
+
+mainMenu = () => {
+  y[0].style.display = "block";
+  end.style.display = "none";
+  scoreText.innerText = "0";
+  questionCounterText.innerText = `1/${MAX_QUESTIONS}`;
+  startGame();
+};
 
 beforeGame = () => {
-  var x = document.getElementsByClassName('container');
-  var y = document.getElementsByClassName('start-screen');
-  x[0].style.display = "block";
-  y[0].style.display = "none";
+  setTimeout (() => {
+    x[0].style.display = "block";
+    timer.style.display = "block";
+    y[0].style.display = "none";
+  }, 100);
 };
 
 startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [... questions];
-  console.log(availableQuestions);
   getNewQuestion();
 };
 
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-    return window.location.assign("/end.html");
+    end.style.display = 'block';
+    x[0].style.display = 'none';
+    y[0].style.display = 'none';
+    timer.style.display = 'none';
+
+    if (scoreText.innerText >= '70') {
+      endText.innerText = 'You Passed! Your score was ' + scoreText.innerText + '%';
+    }
+    else {
+      endText.innerText = 'You Failed. Your score was ' + scoreText.innerText + '%';
+    }
+
   }
   questionCounter++;
+  questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
@@ -78,8 +108,22 @@ choices.forEach(choice => {
     acceptingAnswers = false;
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
-    getNewQuestion();
-  })
+
+    const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+    if (classToApply === 'correct') {
+      incrementScore(CORRECT_BONUS);
+    }
+
+    selectedChoice.parentElement.classList.add(classToApply);
+
+    setTimeout (() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      getNewQuestion();
+    }, 1000);
+  });
 })
 
-startGame();
+incrementScore = num => {
+  score += num;
+  scoreText.innerText = score;
+}

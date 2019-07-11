@@ -13,6 +13,24 @@
     <section class='start-screen'>
       <button id='btn' onclick="beforeGame()">Start Game</button>
     </section>
+    <div id='hud' style='display: none'>
+      <div id='hud-item'>
+        <p class='hud-prefix'>
+          Question
+        </p>
+        <h1 class='hud-main-text' id='questionCounter'>
+
+        </h1>
+      </div>
+      <div id='hud-item'>
+        <p class='hud-prefix'>
+          Score
+        </p>
+        <h1 class='hud-main-text' id='score'>
+          0
+        </h1>
+      </div>
+    </div>
     <section class='container' style='display: none'>
       <div class="containerheader">
          <h2 id="question-text">What is the answer to this question</h2>
@@ -31,6 +49,14 @@
           <p class="answer" data-number='4'>choice 4</p>
           </div>
        </div>
+    </section>
+    <section id='end' style='display: none'>
+      <h2 id='end-text'>
+
+      </h2>
+     <div id='btn2'>
+      <button id="endbtn" onclick="mainMenu()">Main Menu</button>
+    </div>
     </section>
     <script type="text/javascript" src='/assets/quizgame.js'></script>
   </body>
