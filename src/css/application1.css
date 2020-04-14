@@ -1,0 +1,159 @@
+body {
+  background-color: #7cc8e5;
+}
+
+#hud {
+color: white;
+display: flex;
+margin-top: -130px;
+justify-content: space-around;
+font-size: 20px;
+}
+
+.hud-prefix {
+  text-align: center;
+}
+
+.hud-main-text {
+  text-align: center;
+}
+
+#hud-item {
+  height: 100;
+  width: 7%;
+  background-color: gray;
+}
+
+header {
+  text-align: center;
+  font-size: 30px;
+  margin-top: -8px;
+}
+
+.container {
+  background-color: black;
+  height: 70vh;
+  width: 60%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-30vh; /* this is half the height of your div*/
+  margin-left:-30%; /*this is half of width of your div*/
+}
+
+.start-screen {
+  background-color: black;
+  height: 70vh;
+  width: 60%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-30vh; /* this is half the height of your div*/
+  margin-left:-30%; /*this is half of width of your div*/
+}
+
+#end-text {
+  color: white;
+  text-align: center;
+  margin-top: 25%;
+}
+
+#endbtn {
+  text-align: center;
+  justify-content: center;
+  margin-left: 37%;
+  font-size: 1.7rem;
+  border-radius: 12px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  font-size: 2rem;
+  height: 70%;
+  width: 25%;
+  transition: 0.1s;
+  margin-top: 10px;
+}
+
+#endbtn:hover {
+  background-color: #ea4848;
+  color: white;
+  cursor: pointer;
+}
+
+#end {
+  background-color: black;
+  height: 70vh;
+  width: 60%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-30vh; /* this is half the height of your div*/
+  margin-left:-30%; /*this is half of width of your div*/
+  white-space: nowrap;
+}
+
+#btn {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+border-radius: 12px;
+border: none;
+background-color: #3498db;
+color: white;
+font-size: 2rem;
+height: 17%;
+width: 25%;
+transition: 0.1s;
+}
+
+#btn:hover {
+  background-color: #ea4848;
+  color: white;
+  cursor: pointer;
+}
+
+.containerheader {
+   color: white;
+   text-align: center;
+   margin-top: 32px;
+}
+
+.questions {
+ position: absolute;
+ top: 50%;
+ left: 20px;
+ right: 20px;
+ color: white;
+ padding: 20px;
+ transform: translateY(-43%);
+ resize: vertical;
+ overflow: auto;
+}
+
+.question {
+  height: 11vh;
+  width: 90%;
+  background-color: #9b9b9b;
+  margin: 15px auto;
+  cursor: pointer;
+}
+
+.question:hover {
+  -webkit-box-shadow: 0 0 20px red;
+  box-shadow: 0 0 20px red;
+}
+
+.question p {
+  font-size: 22px;
+  padding: 1.5rem;
+}
+
+.correct {
+  background-color: #28a745;
+}
+
+.incorrect {
+  background-color: #dc3545;
+}

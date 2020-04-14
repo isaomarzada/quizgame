@@ -1,0 +1,82 @@
+[
+  {
+    "question": "Which running back holds the record for the most yards in an NFL game?",
+    "choice1": "Adrian Peterson",
+    "choice2": "Walter Payton",
+    "choice3": "Eric Dickerson",
+    "choice4": "Barry Sanders",
+    "answer": 1
+  },
+  {
+    "question": "Which NFL Quarterback came back from a 28-3 lead to win Super Bowl 51?",
+    "choice1": "Tom Brady",
+    "choice2": "Joe Montana",
+    "choice3": "Shaquille O'Neal",
+    "choice4": "Tony Romo",
+    "answer": 1
+  },
+  {
+    "question": "Which NBA player was the youngest player to ever win the MVP award?",
+    "choice1": "Lebron James",
+    "choice2": "Derrick Rose",
+    "choice3": "Kobe Bryant",
+    "choice4": "Tim Duncan",
+    "answer": 2
+  },
+  {
+    "question": "Which NFL Quarterback that was recently drafted went to Allen High School in Allen, TX?",
+    "choice1": "Marcus Mariota",
+    "choice2": "Baker Mayfield",
+    "choice3": "Kyler Murray",
+    "choice4": "Lamar Jackson",
+    "answer": 3
+  },
+  {
+    "question": "Which NFL team has the most Super Bowl wins?",
+    "choice1": "Dallas Cowboys",
+    "choice2": "Pittsburgh Steelers",
+    "choice3": "San Francisco 49ers",
+    "choice4": "Minnesota Vikings",
+    "answer": 2
+  },
+  {
+    "question": "Which NFL team lost four consecutive Super Bowls in a row and has never won a Super Bowl?",
+    "choice1": "Minnesota Vikings",
+    "choice2": "Cleveland Browns",
+    "choice3": "Detroit Lions",
+    "choice4": "Buffalo Bills",
+    "answer": 4
+  },
+  {
+    "question": "Which of the Boxers has never lost a professional fight?",
+    "choice1": "Floyd Mayweather",
+    "choice2": "Muhammad Ali",
+    "choice3": "Mike Tyson",
+    "choice4": "Conor Mcgregor",
+    "answer": 1
+  },
+  {
+    "question": "Which of the following NBA players was drafted straight out of High School?",
+    "choice1": "Michael Jordan",
+    "choice2": "Scottie Pippen",
+    "choice3": "Kevin Garnett",
+    "choice4": "Stephen Curry",
+    "answer": 3
+  },
+  {
+    "question": "Which NFL Quarterback has won the most MVP awards?",
+    "choice1": "Tom Brady",
+    "choice2": "Peyton Manning",
+    "choice3": "Aaron Rodgers",
+    "choice4": "Drew Brees",
+    "answer": 2
+  },
+  {
+    "question": "How many points did Kobe Bryant score in his final NBA game?",
+    "choice1": "40",
+    "choice2": "50",
+    "choice3": "60",
+    "choice4": "70",
+    "answer": 3
+  }
+]
