@@ -40,7 +40,7 @@
     "answer": 2
   },
   {
-    "question": "Which NFL team lost four consecutive Super Bowls in a row and has never won a Super Bowl?",
+    "question": "Which NFL team lost the Super Bowl four years in a row from 1990-1993 and has never won a Super Bowl?",
     "choice1": "Minnesota Vikings",
     "choice2": "Cleveland Browns",
     "choice3": "Detroit Lions",
@@ -48,7 +48,7 @@
     "answer": 4
   },
   {
-    "question": "Which of the Boxers has never lost a professional fight?",
+    "question": "Which of the of the following boxers has never lost a professional fight?",
     "choice1": "Floyd Mayweather",
     "choice2": "Muhammad Ali",
     "choice3": "Mike Tyson",
